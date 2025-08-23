@@ -129,9 +129,9 @@
 
     Вам понадобится обратный прокси (например, Nginx) для обработки HTTPS-трафика и перенаправления запросов на контейнер с ботом.
 
-    **Reverse proxy setup:**
-        -   **Для бота:** 
-        Бот автоматически установит вебхук, если в `.env` указан `WEBHOOK_BASE_URL`. 
+    **Reverse proxy setup:**  
+    **Для бота:**  
+        Бот автоматически установит вебхук, если в `.env` указан `WEBHOOK_BASE_URL`.  
         `https://<ваш_домен>/<BOT_TOKEN>` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>`
 
     -   `https://<ваш_домен>/webhook/yookassa` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>/webhook/yookassa`

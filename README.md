@@ -129,14 +129,15 @@
 
     Вам понадобится обратный прокси (например, Nginx) для обработки HTTPS-трафика и перенаправления запросов на контейнер с ботом.
 
-    **Пути для перенаправления:**
+    **Reverse proxy setup:**
+        -   **Для бота:** 
+        Бот автоматически установит вебхук, если в `.env` указан `WEBHOOK_BASE_URL`. 
+        `https://<ваш_домен>/<BOT_TOKEN>` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>`
+
     -   `https://<ваш_домен>/webhook/yookassa` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>/webhook/yookassa`
     -   `https://<ваш_домен>/webhook/cryptopay` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>/webhook/cryptopay`
     -   `https://<ваш_домен>/webhook/tribute` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>/webhook/tribute`
     -   `https://<ваш_домен>/webhook/panel` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>/webhook/panel`
-    -   **Для Telegram:** 
-        Бот автоматически установит вебхук, если в `.env` указан `WEBHOOK_BASE_URL`. 
-        `https://<ваш_домен>/<BOT_TOKEN>` → `http://remnawave-tg-shop:<WEB_SERVER_PORT>`
 
     Где `remnawave-tg-shop` — это имя сервиса из `docker-compose.yml`, а `<WEB_SERVER_PORT>` — порт, указанный в `.env`.
 

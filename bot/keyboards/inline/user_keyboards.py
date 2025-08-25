@@ -36,37 +36,40 @@ def get_main_menu_inline_keyboard(
             )
         )
 
-    referral_button = InlineKeyboardButton(
-        text=_(key="menu_referral_inline"),
-        callback_data="main_action:referral")
-    promo_button = InlineKeyboardButton(
-        text=_(key="menu_apply_promo_button"),
-        callback_data="main_action:apply_promo")
-    builder.row(referral_button, promo_button)
+    # referral_button = InlineKeyboardButton(
+    #     text=_(key="menu_referral_inline"),
+    #     callback_data="main_action:referral")
+    # promo_button = InlineKeyboardButton(
+    #     text=_(key="menu_apply_promo_button"),
+    #     callback_data="main_action:apply_promo")
+    # builder.row(referral_button, promo_button)
 
     language_button = InlineKeyboardButton(
         text=_(key="menu_language_settings_inline"),
         callback_data="main_action:language")
-    status_button_list = []
-    if settings.SERVER_STATUS_URL:
-        status_button_list.append(
-            InlineKeyboardButton(text=_(key="menu_server_status_button"),
-                                 url=settings.SERVER_STATUS_URL))
+    
+    builder.row(language_button)
+    
+    # status_button_list = []
+    # if settings.SERVER_STATUS_URL:
+    #     status_button_list.append(
+    #         InlineKeyboardButton(text=_(key="menu_server_status_button"),
+    #                              url=settings.SERVER_STATUS_URL))
 
-    if status_button_list:
-        builder.row(language_button, *status_button_list)
-    else:
-        builder.row(language_button)
+    # if status_button_list:
+    #     builder.row(language_button, *status_button_list)
+    # else:
+    #     builder.row(language_button)
 
     if settings.SUPPORT_LINK:
         builder.row(
             InlineKeyboardButton(text=_(key="menu_support_button"),
                                  url=settings.SUPPORT_LINK))
 
-    if settings.TERMS_OF_SERVICE_URL:
-        builder.row(
-            InlineKeyboardButton(text=_(key="menu_terms_button"),
-                                 url=settings.TERMS_OF_SERVICE_URL))
+    # if settings.TERMS_OF_SERVICE_URL:
+    #     builder.row(
+    #         InlineKeyboardButton(text=_(key="menu_terms_button"),
+    #                              url=settings.TERMS_OF_SERVICE_URL))
 
     return builder.as_markup()
 

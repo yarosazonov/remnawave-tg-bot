@@ -4,6 +4,11 @@ bot_database.sqlite3
 # Игнорировать файлы окружения
 .env
 
+# Ignore a virtual environment
+.venv/
+venv/
+
+
 # Игнорировать кэш Python
 __pycache__/
 
